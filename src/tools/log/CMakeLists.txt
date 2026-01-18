@@ -1,6 +1,6 @@
 aux_source_directory(. src)
 
-set(LIB_INTERFACE ${LIB_FILE_PROVIDER}_interface)
+set(LIB_INTERFACE ${LIB_LOG}_interface)
 
 add_library(${LIB_INTERFACE} INTERFACE)
 target_include_directories(
@@ -9,9 +9,10 @@ target_include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-add_library(${LIB_FILE_PROVIDER} STATIC ${src})
+add_library(${LIB_LOG} STATIC ${src})
 target_link_libraries(
     ${LIB_FILE_PROVIDER}
     PUBLIC
     ${LIB_INTERFACE}
 )
+

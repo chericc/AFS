@@ -11,9 +11,16 @@ if (USE_ASAN)
   add_link_options(-fsanitize=address -fno-omit-frame-pointer)
 endif()
 
+set(DEP_DIR ${CMAKE_SOURCE_DIR}/depends)
+set(spdlog_DIR ${DEP_DIR}/spdlog/output/lib/cmake/spdlog)
+find_package(spdlog REQUIRED)
+
 set(COMMON_PCH common_pch)
 
 set(LIB_FILE_PROVIDER file_provider)
+set(LIB_LOG log)
+
 set(BIN_AFS afs)
 
+link_libraries(spdlog::spdlog)
 add_subdirectory(src)

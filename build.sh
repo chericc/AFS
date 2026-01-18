@@ -6,5 +6,5 @@ cmake .. \
 
 cmake ..
 
-# make all install $@
-make all $@
+make all install $@
+# make all $@
