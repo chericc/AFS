@@ -17,6 +17,10 @@ FolderFileProvider::FolderFileProvider()
     _ctx = std::make_unique<Context>();
 }
 
+FolderFileProvider::~FolderFileProvider()
+{
+}
+
 bool FolderFileProvider::setFolderPath(std::string const& folderPath)
 {
     _ctx->folderPath = folderPath;
@@ -34,17 +38,17 @@ bool FolderFileProvider::next()
     bool haveNextFlag = false;
     do {
         if (!fs::exists(_ctx->folderPath)) {
-            XLOG_DEBUG("not exist: {}", _ctx->folderPath);
+            XLOG_ERROR("not exist: {}", _ctx->folderPath);
             break;
         }
 
         if (!fs::is_directory(_ctx->folderPath)) {
-            XLOG_DEBUG("not directory: {}", _ctx->folderPath);
+            XLOG_ERROR("not directory: {}", _ctx->folderPath);
             break;
         }
 
         std::error_code err{};
-        fs::directory_options options{};
+        fs::directory_options options = fs::directory_options::skip_permission_denied;
         
         if (!_ctx->folderIterator) {
             _ctx->folderIterator = std::make_unique<fs::recursive_directory_iterator>(
@@ -53,7 +57,7 @@ bool FolderFileProvider::next()
                 err
             );
             if (err) {
-                XLOG_DEBUG("folder iterate failed: {}", err.message());
+                XLOG_ERROR("folder iterate failed: {}", err.message());
                 break;
             }
 
@@ -64,7 +68,11 @@ bool FolderFileProvider::next()
         _ctx->folderIterator->increment(err);
 
         if (err) {
-            XLOG_DEBUG("increment failed: {}", err.message());
+            XLOG_ERROR("increment failed: {}", err.message());
+            break;
+        }
+        if (*_ctx->folderIterator == fs::end(*_ctx->folderIterator)) {
+            XLOG_DEBUG("end");
             break;
         }
 

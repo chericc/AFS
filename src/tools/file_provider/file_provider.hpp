@@ -25,5 +25,5 @@ public:
     std::string path() override;
 private:
     struct Context;
-    std::unique_ptr<Context> _ctx = nullptr;
+    std::shared_ptr<Context> _ctx = nullptr;
 };
