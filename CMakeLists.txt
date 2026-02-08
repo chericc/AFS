@@ -15,8 +15,9 @@ set(DEP_DIR ${CMAKE_SOURCE_DIR}/depends)
 set(spdlog_DIR ${DEP_DIR}/spdlog/output/lib/cmake/spdlog)
 find_package(spdlog REQUIRED)
 
-set(COMMON_PCH common_pch)
+set(MY_COMMON_HEADER my_common_header)
 
+set(LIB_DB db)
 set(LIB_FILE_PROVIDER file_provider)
 set(LIB_LOG log)
 

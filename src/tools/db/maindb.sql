@@ -1,0 +1,12 @@
+
+
+CREATE TABLE scan_results (
+  id INTEGER PRIMARY KEY,
+  path TEXT UNIQUE NOT NULL
+) STRICT;
+
+CREATE TABLE file (
+  id INTEGER PRIMARY KEY,
+  path TEXT UNIQUE NOT NULL -- 文件路径
+) STRICT;
+

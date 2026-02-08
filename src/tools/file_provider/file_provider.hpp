@@ -6,6 +6,8 @@ file source interface.
 
 */
 
+#include "stdinc.hpp"
+
 class FileProviderInterface {
 public:
     virtual ~FileProviderInterface() = default;

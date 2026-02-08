@@ -16,6 +16,7 @@ target_link_libraries(
     PUBLIC
     ${LIB_LOG}
     ${LIB_INTERFACE}
+    ${MY_COMMON_HEADER}
 )
 
 set(BIN demo_${LIB_FILE_PROVIDER})
