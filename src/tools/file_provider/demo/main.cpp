@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
     log_init_def();
 
     if (argc < 2) {
-        XLOG_ERROR("Usage: {} [path]", argv[0]);
+        xlog_err("Usage: {} [path]", argv[0]);
         return -1;
     }
 
@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
     while (fileProvider->next()) {
         auto path = fileProvider->path();
-        XLOG_DEBUG("path: {}", path);
+        xlog_debug("path: {}", path);
     }
 
     return 0;

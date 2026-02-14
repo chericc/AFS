@@ -38,12 +38,12 @@ bool FolderFileProvider::next()
     bool haveNextFlag = false;
     do {
         if (!fs::exists(_ctx->folderPath)) {
-            XLOG_ERROR("not exist: {}", _ctx->folderPath);
+            xlog_err("not exist: {}", _ctx->folderPath);
             break;
         }
 
         if (!fs::is_directory(_ctx->folderPath)) {
-            XLOG_ERROR("not directory: {}", _ctx->folderPath);
+            xlog_err("not directory: {}", _ctx->folderPath);
             break;
         }
 
@@ -57,7 +57,7 @@ bool FolderFileProvider::next()
                 err
             );
             if (err) {
-                XLOG_ERROR("folder iterate failed: {}", err.message());
+                xlog_err("folder iterate failed: {}", err.message());
                 break;
             }
 
@@ -68,11 +68,11 @@ bool FolderFileProvider::next()
         _ctx->folderIterator->increment(err);
 
         if (err) {
-            XLOG_ERROR("increment failed: {}", err.message());
+            xlog_err("increment failed: {}", err.message());
             break;
         }
         if (*_ctx->folderIterator == fs::end(*_ctx->folderIterator)) {
-            XLOG_DEBUG("end");
+            xlog_debug("end");
             break;
         }
 

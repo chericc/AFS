@@ -1,0 +1,13 @@
+prefix=/home/test/code/AFS/depends/mediainfo/output_mediainfo
+exec_prefix=${prefix}
+libdir=/home/test/code/AFS/depends/mediainfo/output_mediainfo/lib
+includedir=/home/test/code/AFS/depends/mediainfo/output_mediainfo/include
+Libs_Static=${libdir}/libmediainfo.a ${libdir}/libzen.a -lpthread -lz
+
+Name: libmediainfo
+Version: 26.01
+Description: MediaInfoLib
+Requires: libzen
+Requires.private:
+Libs: -L${libdir} -lmediainfo -lz
+Cflags: -I${includedir}

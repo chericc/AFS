@@ -4,6 +4,6 @@ int main()
 {
     log_init_def();
 
-    XLOG_DEBUG("hello");
+    xlog_debug("hello");
     return 0;
 }

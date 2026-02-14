@@ -11,7 +11,7 @@ target_include_directories(
 
 add_library(${LIB_LOG} STATIC ${src})
 target_link_libraries(
-    ${LIB_FILE_PROVIDER}
+    ${LIB_LOG}
     PUBLIC
     ${LIB_INTERFACE}
 )

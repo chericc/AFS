@@ -9,9 +9,9 @@
 
 bool log_init_def();
 #define XLOG_DEF_LOGGER_NAME "default"
-#define XLOG_TRACE(...) SPDLOG_LOGGER_TRACE(spdlog::get(XLOG_DEF_LOGGER_NAME), __VA_ARGS__)
-#define XLOG_DEBUG(...) SPDLOG_LOGGER_DEBUG(spdlog::get(XLOG_DEF_LOGGER_NAME), __VA_ARGS__)
-#define XLOG_INFO(...)  SPDLOG_LOGGER_INFO (spdlog::get(XLOG_DEF_LOGGER_NAME), __VA_ARGS__)
-#define XLOG_WARN(...)  SPDLOG_LOGGER_WARN (spdlog::get(XLOG_DEF_LOGGER_NAME), __VA_ARGS__)
-#define XLOG_ERROR(...) SPDLOG_LOGGER_ERROR(spdlog::get(XLOG_DEF_LOGGER_NAME), __VA_ARGS__)
-#define XLOG_CRIT(...)  SPDLOG_LOGGER_CRITICAL(spdlog::get(XLOG_DEF_LOGGER_NAME), __VA_ARGS__)
+#define xlog_trace(...) SPDLOG_LOGGER_TRACE(spdlog::get(XLOG_DEF_LOGGER_NAME), __VA_ARGS__)
+#define xlog_debug(...) SPDLOG_LOGGER_DEBUG(spdlog::get(XLOG_DEF_LOGGER_NAME), __VA_ARGS__)
+#define xlog_info(...)  SPDLOG_LOGGER_INFO (spdlog::get(XLOG_DEF_LOGGER_NAME), __VA_ARGS__)
+#define xlog_warr(...)  SPDLOG_LOGGER_WARN (spdlog::get(XLOG_DEF_LOGGER_NAME), __VA_ARGS__)
+#define xlog_err(...) SPDLOG_LOGGER_ERROR(spdlog::get(XLOG_DEF_LOGGER_NAME), __VA_ARGS__)
+#define xlog_crit(...)  SPDLOG_LOGGER_CRITICAL(spdlog::get(XLOG_DEF_LOGGER_NAME), __VA_ARGS__)

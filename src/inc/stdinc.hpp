@@ -13,6 +13,7 @@
 #include <vector>
 #include <deque>
 #include <condition_variable> // could have bug if gcc's version is low
+#include <optional>
 
 #include <cstring>
 #include <cstdlib>
