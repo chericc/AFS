@@ -8,6 +8,8 @@ void printUsage(int argc, char *argv[])
 
 int main(int argc, char *argv[])
 {
+    log_init_def();
+    
     if (argc < 2) {
         printUsage(argc, argv);
         exit(EXIT_FAILURE);

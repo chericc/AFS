@@ -53,7 +53,7 @@ set(_IMPORT_PREFIX "/home/test/code/AFS/depends/mediainfo/output_zenlib")
 add_library(zen STATIC IMPORTED)
 
 set_target_properties(zen PROPERTIES
-  INTERFACE_COMPILE_DEFINITIONS "UNICODE;_UNICODE;SIZE_T_IS_LONG;HAVE_GMTIME_R;HAVE_LOCALTIME_R"
+  INTERFACE_COMPILE_DEFINITIONS "SIZE_T_IS_LONG;HAVE_GMTIME_R;HAVE_LOCALTIME_R"
   INTERFACE_INCLUDE_DIRECTORIES "/home/test/code/AFS/depends/mediainfo/output_zenlib/include"
 )
 

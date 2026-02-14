@@ -6,7 +6,8 @@
 cmake ../ZenLib/Project/CMake/ \
 -DCMAKE_INSTALL_PREFIX=$(realpath $(pwd)/../output_zenlib) \
 -DCMAKE_BUILD_TYPE=Release \
--DBUILD_SHARED_LIBS=OFF
+-DBUILD_SHARED_LIBS=OFF \
+-DENABLE_UNICODE=OFF
 ```
 
 ## mediainfolib

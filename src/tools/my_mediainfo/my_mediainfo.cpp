@@ -19,12 +19,14 @@ bool MyMediaInfo::parse()
     bool okFlag = false;
     do {
         MediaInfoLib::MediaInfo mi{};
-        // if (0 == mi.Open(ctx_->file)) {
-        //     xlog_err("open failed");
-        //     break;
-        // }
-
-        // xlog_debug("format: {}", mi.Get(MediaInfoLib::Stream_General, 0, __T("Format")).c_str());
+        if (0 == mi.Open(ctx_->file)) {
+            xlog_err("open failed");
+            break;
+        }
+        
+        // mi.
+        auto inform = mi.Inform();
+        xlog_debug("info: {}", inform);
 
         okFlag = true;
     } while (false);

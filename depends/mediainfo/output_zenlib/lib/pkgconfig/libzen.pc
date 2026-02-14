@@ -2,11 +2,11 @@ prefix=/home/test/code/AFS/depends/mediainfo/output_zenlib
 exec_prefix=${prefix}
 libdir=/home/test/code/AFS/depends/mediainfo/output_zenlib/lib
 includedir=/home/test/code/AFS/depends/mediainfo/output_zenlib/include
-Unicode=yes
+Unicode=no
 Libs_Static=/home/test/code/AFS/depends/mediainfo/output_zenlib/lib/libzen.a -lpthread
 
 Name: libzen
 Version: 0.4.41
 Description: ZenLib
 Libs: -L${libdir} -lzen -lpthread
-Cflags: -I${includedir} -DUNICODE
+Cflags: -I${includedir} 
