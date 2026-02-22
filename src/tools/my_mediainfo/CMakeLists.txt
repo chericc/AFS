@@ -12,7 +12,10 @@ link_directories(
     ${LIB_MEDIAINFO_LIB_PATH}
     ${LIB_ZEN_LIB_PATH}
 )
-include_directories(${LIB_MEDIAINFO_INC_PATH})
+include_directories(
+    ${LIB_MEDIAINFO_INC_PATH}
+    ${LIB_ZEN_INC_PATH}
+)
 add_library(
     ${LIB_MYMEDIAINFO}
     ${src}

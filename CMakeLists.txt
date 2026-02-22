@@ -24,6 +24,7 @@ set(LIB_MEDIAINFO_LIB_PATH ${LIB_MEDIAINFO_PATH}/lib)
 set(LIB_MEDIAINFO mediainfo)
 
 set(LIB_ZEN_PATH ${DEP_DIR}/mediainfo/output_zenlib)
+set(LIB_ZEN_INC_PATH ${LIB_ZEN_PATH}/include)
 set(LIB_ZEN_LIB_PATH ${LIB_ZEN_PATH}/lib)
 set(LIB_ZEN zen)
 

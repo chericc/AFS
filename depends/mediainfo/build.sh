@@ -18,7 +18,7 @@ cmake ../ZenLib/Project/CMake/ \
 -DCMAKE_INSTALL_PREFIX=$(realpath $(pwd)/../output_zenlib) \
 -DCMAKE_BUILD_TYPE=Release \
 -DBUILD_SHARED_LIBS=OFF \
--DENABLE_UNICODE=OFF
+-DENABLE_UNICODE=OFF 
 
 make -j2
 make install
@@ -30,6 +30,8 @@ cmake ../MediaInfoLib/Project/CMake/ \
 -DCMAKE_INSTALL_PREFIX=$(realpath $(pwd)/../output_mediainfo) \
 -DCMAKE_BUILD_TYPE=Release \
 -DBUILD_SHARED_LIBS=OFF \
+-DCMAKE_DISABLE_FIND_PACKAGE_TinyXML=ON \
+-DCMAKE_DISABLE_FIND_PACKAGE_CURL=ON \
 -DZenLib_DIR=$(realpath ../output_zenlib/lib/cmake/zenlib)
 
 make -j2
