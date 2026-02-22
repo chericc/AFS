@@ -1,6 +1,8 @@
 .cache
 build
 
+ddpends/mediainfo/output_mediainfo
+ddpends/mediainfo/output_zenlib
 depends/spdlog/build
 depends/spdlog/spdlog-1.16.0
 depends/spdlog/output

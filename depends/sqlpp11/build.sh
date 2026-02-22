@@ -10,7 +10,9 @@ rm -rf build
 mkdir -p build
 cd build
 
-cmake ../sqlpp11-0.65/ -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$(pwd)/../output \
+mkdir -p ../output
+rm -rf ../output/*
+cmake ../sqlpp11-0.65/ -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$(realpath $(pwd)/../output) \
 -DBUILD_SQLITE3_CONNECTOR=ON -DDEPENDENCY_CHECK=OFF -DBUILD_TESTING=OFF
 
 make -j2

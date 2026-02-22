@@ -12,7 +12,8 @@ mkdir -p build
 cd build
 
 rm -rf *
-rm -rf ../output_zenlib
+mkdir -p ../output_zenlib
+rm -rf ../output_zenlib/*
 cmake ../ZenLib/Project/CMake/ \
 -DCMAKE_INSTALL_PREFIX=$(realpath $(pwd)/../output_zenlib) \
 -DCMAKE_BUILD_TYPE=Release \
@@ -23,7 +24,8 @@ make -j2
 make install
 
 rm -rf *
-rm ../output_mediainfo -rf
+mkdir -p ../output_mediainfo
+rm -rf ../output_mediainfo/*
 cmake ../MediaInfoLib/Project/CMake/ \
 -DCMAKE_INSTALL_PREFIX=$(realpath $(pwd)/../output_mediainfo) \
 -DCMAKE_BUILD_TYPE=Release \

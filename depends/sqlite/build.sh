@@ -11,6 +11,8 @@ rm -rf build
 mkdir -p build
 cd build
 
-../sqlite-src-3510200/configure --enable-all --prefix=$(pwd)/../output
+mkdir -p ../output
+rm -rf ../output/*
+../sqlite-src-3510200/configure --enable-all --prefix=$(realpath $(pwd)/../output)
 make -j2
 make install

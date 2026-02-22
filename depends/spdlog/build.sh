@@ -10,7 +10,8 @@ rm -rf build
 mkdir build
 cd build
 rm -rf *
-rm ../output -rf
+mkdir -p ../output
+rm -rf ../output/*
 cmake ../spdlog-1.16.0/ -DCMAKE_INSTALL_PREFIX=$(realpath $(pwd)/../output) \
 -DCMAKE_BUILD_TYPE=Release
 
